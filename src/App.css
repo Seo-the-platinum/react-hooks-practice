@@ -1,8 +1,11 @@
 #root {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
   text-align: center;
+  width: 100%;
 }
 
 .logo {
@@ -38,4 +41,21 @@
 
 .read-the-docs {
   color: #888;
+}
+
+.App {
+  height: 100%;
+  padding: .5rem;
+  width: 100%;
+}
+
+/* light mode options */
+#light.App {
+  background-color: #cee2d2;
+}
+
+/* dark mode options */
+
+#dark.App {
+  background-color: #1e1f1e;
 }

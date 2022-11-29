@@ -9,10 +9,9 @@ const Characters = () => {
     if (isLoading) {
         return <h1>loading...</h1>
     }
-    console.log(data)
   return (
     <div>
-        <img src={data.data[0].pictures[0].url}/>
+        <img src={data.data[0].pictures[0].url} style={{maxWidth: '100%'}}/>
     </div>
   )
 }

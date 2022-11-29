@@ -1,15 +1,21 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
+import { createContext, useState } from 'react'
 import Characters from './components/Characters'
+import Navbar from './components/navbar/Navbar'
 import './App.css'
+export const GlobalContext = createContext()
 
 function App() {
-  const [count, setCount] = useState(0)
-
+  const [theme, setTheme] = useState('light')
+  const toggleTheme = ()=> {
+    setTheme(curr=> curr === 'dark' ? 'light' : 'dark')
+  }
   return (
-    <div className="App">
-      <Characters/>
-    </div>
+    <GlobalContext.Provider value={{theme, toggleTheme}}>
+      <div className="App" id={theme}>
+          <Navbar/>
+          <Characters/>
+      </div>
+    </GlobalContext.Provider>
   )
 }
 
